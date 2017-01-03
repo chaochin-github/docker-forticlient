@@ -11,9 +11,9 @@ for iface in $(ip a | grep eth | grep inet | awk '{print $2}'); do
   iptables -t nat -A POSTROUTING -s "$iface" -j MASQUERADE
 done
 
-while [ true ]; do
+#while [ true ]; do
   echo "------------ VPN Starts ------------"
   /usr/bin/forticlient
   echo "------------ VPN exited ------------"
   sleep 10
-done
+#done
