@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 RUN apt-get update && \
   apt-get install -y expect wget net-tools iproute ipppd iptables ssh curl && \
@@ -7,7 +7,7 @@ RUN apt-get update && \
 WORKDIR /root
 
 # Install fortivpn client unofficial .deb
-RUN wget 'https://hadler.me/files/forticlient-sslvpn_4.4.2329-1_amd64.deb' -O forticlient-sslvpn_amd64.deb
+RUN wget 'https://hadler.me/files/forticlient-sslvpn_4.4.2327-1_amd64.deb' -O forticlient-sslvpn_amd64.deb
 RUN dpkg -x forticlient-sslvpn_amd64.deb /usr/share/forticlient
 
 # Run setup
